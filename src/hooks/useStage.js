@@ -10,7 +10,6 @@ export const useStage = (player, resetPlayer) => {
         setRowsCleared(0);
 
         const sweepRows = newStage => {
-            //console.log(newStage, "   hjkl")
             return newStage.reduce((acc, row) => {
                 if (row.findIndex(cell => cell[0] === 0) === -1) {
                     setRowsCleared(prev => prev + 1);
@@ -18,7 +17,6 @@ export const useStage = (player, resetPlayer) => {
                     return acc;
                 }
                 acc.push(row);
-                //console.log(acc)
                 return acc;
             }, [])
         }
@@ -41,11 +39,8 @@ export const useStage = (player, resetPlayer) => {
 
             if (player.collided) {
                 resetPlayer();
-                console.log(sweepRows(newStage))
                 return sweepRows(newStage);
             }
-
-            //console.log(newStage)
 
             return newStage;
 
