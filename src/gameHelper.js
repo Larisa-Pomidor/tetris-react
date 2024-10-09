@@ -11,6 +11,7 @@ export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
         for (let x = 0; x < player.tetromino[0].length; x += 1) {
 
             if (player.tetromino[y][x] !== 0) {
+                console.log(stage[y + player.pos.y + moveY][x + player.pos.x + moveX][1])
                 if (
                     !stage[y + player.pos.y + moveY] ||
                     !stage[y + player.pos.y + moveY][x + player.pos.x + moveX] ||
@@ -20,4 +21,6 @@ export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
             }
         }
     }
+    
+    return false;
 }
