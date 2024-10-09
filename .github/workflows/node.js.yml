@@ -29,9 +29,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - name: 
-      uses: mr-smithers-excellent/docker-build-push@v6
+      
     - name: Build & push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: larisapomidor/test-depository/image
         tags: v1, latest
